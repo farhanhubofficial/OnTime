@@ -10,6 +10,7 @@ function Header() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const dropdownRef = useRef(null);
+  const sideMenuRef = useRef(null); // Ref for side menu
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -22,19 +23,34 @@ function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Close side menu when clicking outside of it
+  useEffect(() => {
+    function handleClickOutsideSideMenu(e) {
+      if (sideMenuRef.current && !sideMenuRef.current.contains(e.target)) {
+        setMenu(false);
+      }
+    }
+    if (isSideMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutsideSideMenu);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutsideSideMenu);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutsideSideMenu);
+  }, [isSideMenuOpen]);
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-md font-[Poppins]">
-      <div className="flex items-center justify-between px-6 py-4 lg:px-10 relative">
+      <div className="flex flex-wrap items-center justify-between px-4 py-3 md:px-6 lg:px-10 relative">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
             src={Logo}
             alt="OnTime Logo"
-            className="h-20 w-26 object-cover  rounded-full"
+            className="h-20 w-26 object-cover rounded-full"
           />
         </div>
 
-        {/* 👇 Mobile & Tablet Search + Menu in same flex container */}
+        {/* Mobile & Tablet Search + Menu in the same flex container */}
         <div className="md:hidden flex items-center gap-3">
           <CiSearch
             className="text-2xl cursor-pointer text-black"
@@ -93,7 +109,7 @@ function Header() {
           </ul>
         </div>
 
-        {/* 👇 Desktop Search Icon (now triggers same behavior) */}
+        {/* Desktop Search Icon */}
         <div className="hidden md:flex items-center">
           <CiSearch
             className="text-2xl cursor-pointer hover:text-green-600"
@@ -102,7 +118,7 @@ function Header() {
         </div>
       </div>
 
-      {/* 👇 Shared Search Bar (responsive for all screens, inline style) */}
+      {/* Shared Search Bar (responsive for all screens) */}
       {showSearchBar && (
         <div className="w-full px-6 md:px-10 pb-4 flex items-center gap-2">
           <input
@@ -118,9 +134,9 @@ function Header() {
 
       {/* Mobile Side Menu */}
       {isSideMenuOpen && (
-        <div className="fixed inset-0 z-50 flex">
+        <div className="fixed inset-0 z-[60] overflow-y-auto">
           <div className="flex-1 bg-black bg-opacity-40" onClick={() => setMenu(false)}></div>
-          <div className="w-64 bg-white h-full p-6 shadow-lg relative z-50">
+          <div className="w-64 bg-white h-full p-6 shadow-lg absolute right-0 z-50" ref={sideMenuRef}>
             <IoMdClose
               className="text-3xl mb-6 cursor-pointer"
               onClick={() => setMenu(false)}

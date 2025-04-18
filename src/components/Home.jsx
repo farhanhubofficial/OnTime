@@ -84,20 +84,19 @@ function Home() {
 
       {/* Welcome Section */}
       <section className="px-4 md:px-10 lg:px-20 py-12 text-center bg-white animate-fade-in">
-  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">
-    ..............................Welcome to <span className="text-orange-500">On</span><span className="text-blue-500">Time</span> Co-working Space..............................
-  </h2>
-  <p className="text-2xl text-gray-700 max-w-4xl mx-auto text-justify leading-loose">
-    Working at home is great but unifying your teams’ efforts increases productivity and makes you achieve more. Also, connecting with others outside your team widens your network and perspective. As a member of AHBC, you get more than an office space, you get the benefit of our value added services giving your start-up the edge to stay ahead.
-  </p>
-</section>
-
-
+        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold mb-6 leading-snug">
+          Welcome to <span className="text-orange-500">On</span>
+          <span className="text-blue-500">Time</span> Co-working Space
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 max-w-5xl mx-auto text-justify leading-relaxed">
+          Working at home is great, but unifying your teams’ efforts increases productivity and helps you achieve more. Also, connecting with others outside your team widens your network and perspective. As a member of AHBC, you get more than an office space — you get the benefit of our value-added services giving your startup the edge to stay ahead.
+        </p>
+      </section>
 
       {/* Facilities Section */}
       <section className="px-4 md:px-10 lg:px-20 py-12 bg-gray-100 animate-slide-up">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-8">
-          .........................Facilities..........................
+          Facilities
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
           {facilities.map((item, index) => (
@@ -110,10 +109,8 @@ function Home() {
                 alt={item.label}
                 className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
               />
-              {/* White border only on hover */}
               <div className="absolute inset-0 border border-white border-opacity-0 group-hover:border-opacity-100 transition duration-300 rounded-lg"></div>
 
-              {/* Centered Label with custom styling */}
               <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-3xl text-center px-4">
                 {item.label}
               </div>
