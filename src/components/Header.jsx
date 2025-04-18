@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { FaChevronDown } from "react-icons/fa";
-import Logo from "./images/Logo.jpg";
+import Logo from "./images/Logo-removebg-preview.png";
 
 function Header() {
   const [isSideMenuOpen, setMenu] = useState(false);
