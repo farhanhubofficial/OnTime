@@ -1,5 +1,5 @@
 import React from 'react'
-import CurtApproach from './images/approach.jpg'
+import CurtApproach from './images/Approach.jpg'
 import { Link } from 'react-router-dom'
 import { FaChevronRight } from "react-icons/fa6";
 
