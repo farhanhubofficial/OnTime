@@ -26,10 +26,10 @@ function Approach() {
       </div>
 
       {/* Content Section */}
-      <div className='w-full sm:px-6 md:px-8 mx-auto text-base sm:text-lg leading-7 space-y-8'>
+      <div className='w-full ml-1 sm:px-6 md:px-8 mx-auto text-base sm:text-lg leading-7 space-y-8'>
 
         {/* Section Title */}
-        <div className='space-y-4'>
+        <div className='space-y-4 '>
           <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
             Our Approach
           </h2>
