@@ -1,12 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import h1 from "./images/h1.jpg";
-import h2 from "./images/h2.jpg";
-import h3 from "./images/h3.jpg";
-import h4 from "./images/h4.jpg";
-import h5 from "./images/h5.jpg";
-import h6 from "./images/h6.jpg";
-import h7 from "./images/h7.jpg";
+git
 import h8 from "./images/h8.jpg";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
