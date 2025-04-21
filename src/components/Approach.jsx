@@ -26,7 +26,7 @@ function Approach() {
       </div>
 
       {/* Content Section */}
-      <div className='w-full mx-2 sm:px-6 md:px-8  text-base sm:text-lg leading-7 space-y-8'>
+      <div className='w-full mx-2 sm:px-6 md:px-8 sm:mx-3 text-base sm:text-lg leading-7 space-y-8'>
 
         {/* Section Title */}
         <div className='space-y-4 '>
