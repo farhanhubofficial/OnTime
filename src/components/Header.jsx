@@ -68,9 +68,9 @@ function Header() {
           />
         </div>
 
-        {/* Desktop Nav (Fixed Styling Here) */}
-        <div className="hidden md:flex w-full justify-center">
-          <ul className="flex justify-between text-xl w-full max-w-[1200px] px-6 items-center text-black font-medium">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] justify-center">
+          <ul className="flex justify-between text-xl w-full px-6 items-center text-black font-medium">
             <li><Link to="/" className="hover:text-green-600">Home</Link></li>
 
             {/* About Us Dropdown */}
