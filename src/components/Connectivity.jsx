@@ -7,7 +7,8 @@ import { Routes, Route } from 'react-router-dom'
 import Vision from './Vision'
 import Approach from './Approach'
 import OntimeServices from "./OntimeServices"
-import CoworkingSpaces from "./CoworkingSpaces";
+
+import CoworkingSpaces from "./CoworkingSpaces"
 import CreativeSpaces from "./CreativeSpaces";
 import PrivateOffices from "./PrivateOffices";
 import MeetingRooms from "./MeetingRooms";
