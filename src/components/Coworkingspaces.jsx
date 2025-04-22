@@ -1,7 +1,7 @@
 import React from "react";
 import h1 from "./images/h1.jpg";
 
-const CoworkingSpaces = () => {
+const Coworkingspaces = () => {
   const Brand = () => (
     <span className="inline-block">
       <span className="text-orange-600 font-bold">On</span>
@@ -59,4 +59,5 @@ const CoworkingSpaces = () => {
   );
 };
 
-export default CoworkingSpaces;
+export default Coworkingspaces;
+

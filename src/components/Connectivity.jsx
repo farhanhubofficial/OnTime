@@ -8,7 +8,7 @@ import Vision from './Vision'
 import Approach from './Approach'
 import OntimeServices from "./OntimeServices"
 
-import CoworkingSpaces from "./CoworkingSpaces"
+import Coworkingspaces from './Coworkingspaces'
 import CreativeSpaces from "./CreativeSpaces";
 import PrivateOffices from "./PrivateOffices";
 import MeetingRooms from "./MeetingRooms";
@@ -25,7 +25,7 @@ function Connectivity() {
         <Route path="/vision" element={<Vision />} />
         <Route path="/approach" element={<Approach />} />
         <Route  path = "/services" element = {<OntimeServices/>} ></Route>
-        <Route path= "/coworking" element = {<CoworkingSpaces/>}></Route>
+        <Route path= "/coworking" element = {<Coworkingspaces/>}></Route>
         <Route path= "/creative" element = {<CreativeSpaces/>}></Route>
         <Route path= "/private" element = {<PrivateOffices/>}></Route>
         <Route path= "/meeting" element = {<MeetingRooms/>}></Route>
