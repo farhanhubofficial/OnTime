@@ -16,7 +16,6 @@ function Header() {
   const aboutRef = useRef(null);
   const facilitiesRef = useRef(null);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (
@@ -33,7 +32,6 @@ function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close side menu when clicking outside of it
   useEffect(() => {
     function handleClickOutsideSideMenu(e) {
       if (sideMenuRef.current && !sideMenuRef.current.contains(e.target)) {
@@ -51,26 +49,16 @@ function Header() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-md font-[Poppins]">
       <div className="flex flex-wrap items-center justify-between px-4 py-3 md:px-6 lg:px-10 relative">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <img src={Logo} alt="OnTime Logo" className="h-20 w-26 object-cover rounded-full" />
-        </div>
 
-        {/* Mobile Menu + Search */}
-        <div className="md:hidden flex items-center gap-3">
-          <CiSearch
-            className="text-2xl cursor-pointer text-black"
-            onClick={() => setShowSearchBar(prev => !prev)}
-          />
-          <IoMdMenu
-            onClick={() => setMenu(true)}
-            className="text-3xl text-black cursor-pointer"
-          />
-        </div>
+        {/* Desktop Header Layout */}
+        <div className="hidden md:flex w-full justify-between items-center">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <img src={Logo} alt="OnTime Logo" className="h-20 w-26 object-cover rounded-full" />
+          </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] justify-center">
-          <ul className="flex justify-between text-xl w-full px-6 items-center text-black font-medium">
+          {/* Desktop Nav */}
+          <ul className="flex space-x-9 justify-between text-xl items-center text-black font-medium gap-6">
             <li><Link to="/" className="hover:text-green-600">Home</Link></li>
 
             {/* About Us Dropdown */}
@@ -104,7 +92,7 @@ function Header() {
               </div>
               {isFacilitiesDropdownOpen && (
                 <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-0">
-                  {[ 
+                  {[
                     { name: "Coworking Spaces", path: "/coworking" },
                     { name: "Creative Spaces", path: "/creative" },
                     { name: "Private Offices", path: "/private" },
@@ -131,14 +119,33 @@ function Header() {
             <li><Link to="/news-events" className="hover:text-green-600">News & Events</Link></li>
             <li><Link to="/contact" className="hover:text-green-600">Contact</Link></li>
           </ul>
+
+          {/* Desktop Search Icon */}
+          <div className="hidden md:flex items-center ml-4">
+            <CiSearch
+              className="text-2xl cursor-pointer hover:text-green-600"
+              onClick={() => setShowSearchBar(prev => !prev)}
+            />
+          </div>
         </div>
 
-        {/* Desktop Search Icon */}
-        <div className="hidden md:flex items-center">
-          <CiSearch
-            className="text-2xl cursor-pointer hover:text-green-600"
-            onClick={() => setShowSearchBar(prev => !prev)}
-          />
+        {/* Mobile Menu + Search */}
+        <div className="md:hidden flex items-center gap-3 w-full justify-between">
+          {/* Logo for Mobile */}
+          <div className="flex-shrink-0">
+            <img src={Logo} alt="OnTime Logo" className="h-20 w-26 object-cover rounded-full" />
+          </div>
+
+          <div className="flex items-center gap-3">
+            <CiSearch
+              className="text-2xl cursor-pointer text-black"
+              onClick={() => setShowSearchBar(prev => !prev)}
+            />
+            <IoMdMenu
+              onClick={() => setMenu(true)}
+              className="text-3xl text-black cursor-pointer"
+            />
+          </div>
         </div>
       </div>
 
@@ -196,7 +203,7 @@ function Header() {
                 </div>
                 {isFacilitiesDropdownOpen && (
                   <ul className="mt-2 space-y-2 bg-slate-100 text-black rounded-md ml-4 p-2">
-                    {[ 
+                    {[
                       { name: "Coworking Spaces", path: "/coworking" },
                       { name: "Creative Spaces", path: "/creative" },
                       { name: "Private Offices", path: "/private" },
