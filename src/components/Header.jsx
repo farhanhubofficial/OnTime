@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { FaChevronDown } from "react-icons/fa";
-import Logo from "./images/Logo-removebg-preview.png";
+import Logo from "./images/images.png";
 
 function Header() {
   const [isSideMenuOpen, setMenu] = useState(false);
@@ -53,8 +53,12 @@ function Header() {
         {/* Desktop Header Layout */}
         <div className="hidden md:flex w-full justify-between items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <img src={Logo} alt="OnTime Logo" className="h-20 w-26 object-cover rounded-full" />
+          <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
+            <img src={Logo} alt="OnTime Logo" className="h-16 w-16 object-cover rounded-full flex-shrink-0" />
+            <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold leading-tight whitespace-nowrap">
+              <span className="block text-orange-600 leading-none">UrbanVolt</span>
+              <span className="text-teal-500 leading-none">Solutions</span>
+            </h1>
           </div>
 
           {/* Desktop Nav */}
@@ -92,24 +96,18 @@ function Header() {
               </div>
               {isFacilitiesDropdownOpen && (
                 <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-0">
-                  {[
-                    { name: "Coworking Spaces", path: "/coworking" },
-                    { name: "Creative Spaces", path: "/creative" },
-                    { name: "Private Offices", path: "/private" },
-                    { name: "Meeting Rooms", path: "/meeting" },
-                    { name: "Conference Rooms", path: "/conference" },
-                    { name: "Ontime Studio", path: "/studio" },
-                  ].map((item, idx) => (
-                    <li key={idx}>
-                      <Link
-                        to={item.path}
-                        className="block px-4 py-2 hover:bg-orange-600 hover:text-white"
-                        onClick={() => setFacilitiesDropdownOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
+                  {[{ name: "Coworking Spaces", path: "/coworking" }, { name: "Creative Spaces", path: "/creative" }, { name: "Private Offices", path: "/private" }, { name: "Meeting Rooms", path: "/meeting" }, { name: "Conference Rooms", path: "/conference" }, { name: "Ontime Studio", path: "/studio" }]
+                    .map((item, idx) => (
+                      <li key={idx}>
+                        <Link
+                          to={item.path}
+                          className="block px-4 py-2 hover:bg-orange-600 hover:text-white"
+                          onClick={() => setFacilitiesDropdownOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               )}
             </li>
@@ -131,9 +129,13 @@ function Header() {
 
         {/* Mobile Menu + Search */}
         <div className="md:hidden flex items-center gap-3 w-full justify-between">
-          {/* Logo for Mobile */}
-          <div className="flex-shrink-0">
+          {/* Logo and Text for Mobile */}
+          <div className="flex-shrink-0 flex items-center gap-2">
             <img src={Logo} alt="OnTime Logo" className="h-20 w-26 object-cover rounded-full" />
+            <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold leading-tight whitespace-nowrap">
+              <span className="block text-orange-600 leading-none">UrbanVolt</span>
+              <span className="text-blue-600 leading-none">Solutions</span>
+            </h1>
           </div>
 
           <div className="flex items-center gap-3">
@@ -203,18 +205,12 @@ function Header() {
                 </div>
                 {isFacilitiesDropdownOpen && (
                   <ul className="mt-2 space-y-2 bg-slate-100 text-black rounded-md ml-4 p-2">
-                    {[
-                      { name: "Coworking Spaces", path: "/coworking" },
-                      { name: "Creative Spaces", path: "/creative" },
-                      { name: "Private Offices", path: "/private" },
-                      { name: "Meeting Rooms", path: "/meeting" },
-                      { name: "Conference Rooms", path: "/conference" },
-                      { name: "Ontime Studio", path: "/studio" },
-                    ].map((item, idx) => (
-                      <li key={idx}>
-                        <Link to={item.path} onClick={() => setMenu(false)} className="hover:bg-orange-600 hover:text-white">{item.name}</Link>
-                      </li>
-                    ))}
+                    {[{ name: "Coworking Spaces", path: "/coworking" }, { name: "Creative Spaces", path: "/creative" }, { name: "Private Offices", path: "/private" }, { name: "Meeting Rooms", path: "/meeting" }, { name: "Conference Rooms", path: "/conference" }, { name: "Ontime Studio", path: "/studio" }]
+                      .map((item, idx) => (
+                        <li key={idx}>
+                          <Link to={item.path} onClick={() => setMenu(false)} className="hover:bg-orange-600 hover:text-white">{item.name}</Link>
+                        </li>
+                      ))}
                   </ul>
                 )}
               </li>
