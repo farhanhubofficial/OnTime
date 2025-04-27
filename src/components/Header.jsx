@@ -222,9 +222,9 @@ function Header() {
               )}
             </li>
 
-              <li><Link to="/arbitration" onClick={() => setMenu(false)}>Arbitration</Link></li>
+         
               <li><Link to="/faqs" onClick={() => setMenu(false)}>FAQs</Link></li>
-              <li><Link to="/news-events" onClick={() => setMenu(false)}>News & Events</Link></li>
+             
               <li><Link to="/contact" onClick={() => setMenu(false)}>Contact</Link></li>
             </ul>
           </div>
