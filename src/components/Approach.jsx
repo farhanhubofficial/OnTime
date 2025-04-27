@@ -37,31 +37,32 @@ function Approach() {
 
         {/* Text & Image Layout */}
         <div className='flex flex-col lg:flex-row gap-10 items-start'>
-          {/* Text Block */}
-          <div className='w-full lg:w-1/2 space-y-6 text-left'>
-            <p>
-              At OnTime Co-working Space, we have a proven track record in delivering client projects to the most demanding of timescales, within budget and with the lowest possible client risk.
-            </p>
-            <p>
-              All our projects are led by a highly experienced Director and a team with a passion for delivering high-quality linen supply and tailored solutions alongside an excellent level of service.
-            </p>
-            <p>
-              We adopt a collaborative approach, working with the client, stakeholders, and design teams to define a clear brief that outlines objectives, timelines, and budgets tailored to project goals.
-            </p>
-            <p>
-              Our approach is to achieve the best balance of quality, cost, function, efficiency, maintainability, and timely delivery.
-            </p>
-          </div>
+  {/* Text Block */}
+  <div className='w-full lg:w-1/2 space-y-6 text-left'>
+    <p>
+      At UrbanVolt Solutions, we have a proven track record in delivering electrical installation projects across residential, commercial, and industrial sectors. We meet the most demanding timelines, adhere to budgets, and minimize client risks, ensuring peace of mind.
+    </p>
+    <p>
+      All our projects are overseen by a highly experienced team, led by our Director, with a commitment to providing safe, reliable, and energy-efficient electrical systems tailored to each client's unique needs.
+    </p>
+    <p>
+      We take a collaborative approach, working closely with clients, stakeholders, and design teams to define clear objectives, timelines, and budgets. This helps ensure every electrical installation meets the specific goals and requirements of the project.
+    </p>
+    <p>
+      Our goal is to strike the perfect balance between quality, safety, cost-effectiveness, energy efficiency, and timely project delivery, ensuring that each installation is built to last and perform seamlessly.
+    </p>
+  </div>
 
-          {/* Image Block */}
-          <div className='w-full lg:w-1/2'>
-            <img
-              src={CurtApproach}
-              alt="Approach Visual"
-              className='w-full h-auto rounded-md'
-            />
-          </div>
-        </div>
+  {/* Image Block */}
+  <div className='w-full lg:w-1/2'>
+    <img
+      src={CurtApproach}
+      alt="Electrical Installation Approach Visual"
+      className='w-full h-auto rounded-md'
+    />
+  </div>
+</div>
+
       </div>
     </div>
   )

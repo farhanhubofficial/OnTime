@@ -25,44 +25,46 @@ function Vision() {
       </div>
 
       {/* Content Section */}
-      <div className='w-full  sm:px-6 md:px-8  mx-auto text-base sm:text-lg text-left leading-7 space-y-8'>
+      <div className='w-full sm:px-6 md:px-8 mx-auto text-base sm:text-lg text-left leading-7 space-y-8'>
 
-        {/* Vision Section */}
-        <div className='space-y-4'>
-          <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
-            Vision
-          </h2>
-          <p className='leading-relaxed'>
-            To be the trusted linen partner with cutting-edge solutions and a passionate team to deliver distinct customer experience in our products and services.
-          </p>
-        </div>
+{/* Vision Section */}
+<div className='space-y-4'>
+  <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
+    Vision
+  </h2>
+  <p className='leading-relaxed'>
+    To be the leading provider of innovative electrical solutions, empowering residential, commercial, and industrial sectors with reliable, safe, and energy-efficient installations, all backed by a dedicated and expert team.
+  </p>
+</div>
 
-        {/* Mission Section */}
-        <div className='space-y-4'>
-          <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
-            Mission
-          </h2>
-          <ul className='list-disc pl-4 sm:pl-5 space-y-3'>
-            <li>Add value to the value chain of our customers' business processes via strong partnerships with our distinct interior services.</li>
-            <li>Establish comprehensive business processes and methodologies to provide the highest customer satisfaction.</li>
-            <li>Create the best working environment to attract and retain talented and committed staff, to perform the best services in the interior design industry.</li>
-          </ul>
-        </div>
+{/* Mission Section */}
+<div className='space-y-4'>
+  <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
+    Mission
+  </h2>
+  <ul className='list-disc pl-4 sm:pl-5 space-y-3'>
+    <li>Deliver cutting-edge electrical installation solutions to residential buildings, warehouses, hospitals, learning institutions, factories, and data centers, ensuring the highest quality and safety standards.</li>
+    <li>Establish long-term partnerships with our clients by offering customized electrical systems that enhance operational efficiency and sustainability.</li>
+    <li>Provide a supportive and inclusive work environment to attract and retain skilled professionals who are committed to excellence in the electrical installation industry.</li>
+  </ul>
+</div>
 
-        {/* Core Values Section */}
-        <div className='space-y-4'>
-          <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
-            Core Values
-          </h2>
-          <ul className='list-disc pl-4 sm:pl-5 space-y-3'>
-            <li>Integrity: To act with honesty and to be truthful with our actions.</li>
-            <li>Service Excellence: To constantly strive to improve service quality and exceed expectations.</li>
-            <li>Teamwork: Company before Group and Group before Self.</li>
-            <li>Responsibility and Dependability: To be accountable for one’s own decisions, actions, and results.</li>
-            <li>Communication: To communicate constantly, respectfully, and openly with customers, colleagues, and partners.</li>
-          </ul>
-        </div>
-      </div>
+{/* Core Values Section */}
+<div className='space-y-4'>
+  <h2 className='text-xl sm:text-2xl font-semibold border-b-2 border-yellow-800 inline-block pb-2'>
+    Core Values
+  </h2>
+  <ul className='list-disc pl-4 sm:pl-5 space-y-3'>
+    <li>Integrity: We act with honesty and transparency in all our electrical installations and business dealings.</li>
+    <li>Safety: We prioritize the safety of our team, clients, and communities by adhering to the highest standards of electrical safety and compliance.</li>
+    <li>Excellence: We strive for excellence in every project, delivering reliable, efficient, and durable electrical systems that exceed expectations.</li>
+    <li>Innovation: We embrace new technologies and practices to continuously improve our electrical solutions for diverse sectors like residential, industrial, and commercial facilities.</li>
+    <li>Collaboration: We believe in strong teamwork and fostering positive relationships with our clients, suppliers, and partners to achieve mutual success.</li>
+  </ul>
+</div>
+
+</div>
+
     </div>
   )
 }

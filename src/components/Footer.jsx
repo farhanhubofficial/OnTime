@@ -10,21 +10,19 @@ import {
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
-import Logo from "./images/Logo-removebg-preview.png";
+import Logo from "./images/images-removebg-preview (1).png";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-10 px-4 md:px-10 lg:px-20 w-full mt-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-around items-center gap-10">
 
         {/* Logo + Brand */}
         <div className="flex items-center gap-4">
           <img src={Logo} alt="OnTime Logo" className="h-12 w-auto" />
-          <h1 className="text-xl md:text-2xl font-bold">
-            <span className="text-orange-500">On</span>
-            <span className="text-blue-500">Time</span>{" "}
-            <span className="text-white">Co-working Space</span>
-          </h1>
+          <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold leading-tight whitespace-nowrap">
+              <span className=" text-orange-400 leading-none">UrbanVolt</span>  <span className="text-teal-500 leading-none">Solutions</span>
+            </h1>
         </div>
 
         {/* Contact Info */}
@@ -32,18 +30,18 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <FaMapMarkerAlt className="text-lg text-blue-400" />
             <span>
-              Orbit View Hotel / Ismariot, 9th FLR, Eastleigh, Nairobi, 12th Street
+             Istanbul shopping Center, GRD FLR, Eastleigh, Nairobi, Jam Street
             </span>
           </div>
 
           <div className="flex items-center gap-3">
             <FaPhoneAlt className="text-lg text-blue-400" />
-            <span>+254711664459</span>
+            <span>+254723048629</span>
           </div>
 
           <div className="flex items-center gap-3">
             <FaEnvelope className="text-lg text-blue-400" />
-            <span>ontimecowork@gmail.com</span>
+            <span>urbanvoltsolutions@gmail.com</span>
           </div>
         </div>
       </div>
@@ -51,7 +49,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
         <p className="mb-4">
-          Copyright © {new Date().getFullYear()} OnTime Co-working Space. All
+          Copyright © {new Date().getFullYear()} urbanVolt Solutions. All
           rights reserved. Powered by <span className="text-white">SuluHubFarhan</span>
         </p>
 

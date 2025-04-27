@@ -56,7 +56,7 @@ function Header() {
           <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
             <img src={Logo} alt="OnTime Logo" className="h-16 w-16 object-cover rounded-full flex-shrink-0" />
             <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold leading-tight whitespace-nowrap">
-              <span className="block text-orange-600 leading-none">UrbanVolt</span>
+              <span className="block text-orange-400 leading-none">UrbanVolt</span>
               <span className="text-teal-500 leading-none">Solutions</span>
             </h1>
           </div>
@@ -92,11 +92,11 @@ function Header() {
               onMouseLeave={() => setFacilitiesDropdownOpen(false)}
             >
               <div className="flex items-center hover:text-green-600 select-none">
-                Facilities <FaChevronDown className="ml-1 text-sm" />
+                Projects <FaChevronDown className="ml-1 text-sm" />
               </div>
               {isFacilitiesDropdownOpen && (
                 <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-0">
-                  {[{ name: "Coworking Spaces", path: "/coworking" }, { name: "Creative Spaces", path: "/creative" }, { name: "Private Offices", path: "/private" }, { name: "Meeting Rooms", path: "/meeting" }, { name: "Conference Rooms", path: "/conference" }, { name: "Ontime Studio", path: "/studio" }]
+                  {[{ name: "Residential Buildings", path: "/residential" }, { name: "Commercial Buildings", path: "/residential" }, { name: "Hospitals", path: "/residential" }, { name: "Learning Institutions", path: "/residential" }, { name: "Warehouses", path: "/residential" }, { name: "Factories", path: "/residential" }]
                     .map((item, idx) => (
                       <li key={idx}>
                         <Link
@@ -112,9 +112,8 @@ function Header() {
               )}
             </li>
 
-            <li><Link to="/arbitration" className="hover:text-green-600">Arbitration</Link></li>
             <li><Link to="/faqs" className="hover:text-green-600">FAQs</Link></li>
-            <li><Link to="/news-events" className="hover:text-green-600">News & Events</Link></li>
+    
             <li><Link to="/contact" className="hover:text-green-600">Contact</Link></li>
           </ul>
 
@@ -196,24 +195,32 @@ function Header() {
               </li>
 
               {/* Facilities Dropdown for Mobile */}
-              <li>
-                <div
-                  className="font-semibold text-gray-700 flex items-center justify-between cursor-pointer"
-                  onClick={() => setFacilitiesDropdownOpen(!isFacilitiesDropdownOpen)}
-                >
-                  Facilities <FaChevronDown className="ml-2" />
-                </div>
-                {isFacilitiesDropdownOpen && (
-                  <ul className="mt-2 space-y-2 bg-slate-100 text-black rounded-md ml-4 p-2">
-                    {[{ name: "Coworking Spaces", path: "/coworking" }, { name: "Creative Spaces", path: "/creative" }, { name: "Private Offices", path: "/private" }, { name: "Meeting Rooms", path: "/meeting" }, { name: "Conference Rooms", path: "/conference" }, { name: "Ontime Studio", path: "/studio" }]
-                      .map((item, idx) => (
-                        <li key={idx}>
-                          <Link to={item.path} onClick={() => setMenu(false)} className="hover:bg-orange-600 hover:text-white">{item.name}</Link>
-                        </li>
-                      ))}
-                  </ul>
-                )}
-              </li>
+              <li
+              ref={facilitiesRef}
+              className="relative cursor-pointer"
+              onMouseEnter={() => setFacilitiesDropdownOpen(true)}
+              onMouseLeave={() => setFacilitiesDropdownOpen(false)}
+            >
+              <div className="flex items-center hover:text-green-600 select-none">
+                Projects <FaChevronDown className="ml-1 text-sm" />
+              </div>
+              {isFacilitiesDropdownOpen && (
+                <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-0">
+                  {[{ name: "Residential Buildings", path: "/residential" }, { name: "Commercial Buildings", path: "/residential" }, { name: "Hospitals", path: "/residential" }, { name: "Learning Institutions", path: "/residential" }, { name: "Warehouses", path: "/residential" }, { name: "Factories", path: "/residential" }]
+                    .map((item, idx) => (
+                      <li key={idx}>
+                        <Link
+                          to={item.path}
+                          className="block px-4 py-2 hover:bg-orange-600 hover:text-white"
+                          onClick={() => setFacilitiesDropdownOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+              )}
+            </li>
 
               <li><Link to="/arbitration" onClick={() => setMenu(false)}>Arbitration</Link></li>
               <li><Link to="/faqs" onClick={() => setMenu(false)}>FAQs</Link></li>

@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import Vision from './Vision'
 import Approach from './Approach'
 import OntimeServices from "./OntimeServices"
+import Contact from "./Contact"
 
 import Coworkingspaces from './Coworkingspaces'
 import CreativeSpaces from "./CreativeSpaces";
@@ -14,12 +15,16 @@ import PrivateOffices from "./PrivateOffices";
 import MeetingRooms from "./MeetingRooms";
 import ConferenceRoom from "./ConferenceRoom";
 import OnTimeStudio from "./OnTimeStudio";
+import Faqs from "./Faqs"
+import Residential from "./Residential"
 
 function Connectivity() {
   return (
     <div>
         <Header/>
         <Routes>
+        <Route path="/residential" element={<Residential />} />
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/vision" element={<Vision />} />
@@ -31,7 +36,8 @@ function Connectivity() {
         <Route path= "/meeting" element = {<MeetingRooms/>}></Route>
         <Route path= "/conference" element = {<ConferenceRoom/>}></Route>
         <Route path= "/studio" element = {<OnTimeStudio/>}></Route>
-
+  <Route path="/faqs" element={<Faqs />} />
+        <Route path= "/contact" element = {<Contact/>}></Route>
 
 
 
