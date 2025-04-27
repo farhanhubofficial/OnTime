@@ -177,22 +177,23 @@ function Header() {
               <li><Link to="/" onClick={() => setMenu(false)}>Home</Link></li>
 
               {/* About Us Dropdown for Mobile */}
-              <li>
-                <div
-                  onClick={() => setAboutDropdownOpen(!isAboutDropdownOpen)}
-                  className="cursor-pointer flex justify-between items-center"
-                >
-                  <span>About Us</span>
-                  <FaChevronDown className="" />
+              <li
+              className="relative cursor-pointer"
+              onMouseEnter={() => setAboutDropdownOpen(true)}
+              onMouseLeave={() => setAboutDropdownOpen(false)}
+              ref={aboutRef}
+            >
+              <div className="flex items-center hover:text-green-600 select-none">
+                About Us <FaChevronDown className="ml-1 text-sm" />
+              </div>
+              {isAboutDropdownOpen && (
+                <div className="absolute top-full left-0 bg-slate-100 text-black border shadow-md z-50 w-64 mt-0 rounded-md p-3 space-y-2">
+                  <Link to="/vision" className="block border-b border-yellow-800 pb-1 hover:text-orange-600">Vision, Mission & Core Values</Link>
+                  <Link to="/approach" className="block border-b border-yellow-800 pb-1 hover:text-orange-600">Our Approach</Link>
+                  <Link to="/services" className="block hover:text-orange-600">Our Product & Services</Link>
                 </div>
-                {isAboutDropdownOpen && (
-                  <div className="bg-slate-100 border mt-0 p-3 rounded space-y-2">
-                    <Link to="/vision" onClick={() => setMenu(false)} className="block border-b border-yellow-800 pb-1">Vision, Mission & Core Values</Link>
-                    <Link to="/approach" onClick={() => setMenu(false)} className="block border-b border-yellow-800 pb-1">Our Approach</Link>
-                    <Link to="/services" onClick={() => setMenu(false)} className="block">Our Product & Services</Link>
-                  </div>
-                )}
-              </li>
+              )}
+            </li>
 
               {/* Facilities Dropdown for Mobile */}
               <li
