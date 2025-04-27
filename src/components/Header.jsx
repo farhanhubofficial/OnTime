@@ -183,7 +183,7 @@ function Header() {
                   className="cursor-pointer flex justify-between items-center"
                 >
                   <span>About Us</span>
-                  <FaChevronDown className="ml-2" />
+                  <FaChevronDown className="" />
                 </div>
                 {isAboutDropdownOpen && (
                   <div className="bg-slate-100 border mt-0 p-3 rounded space-y-2">
