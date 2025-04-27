@@ -164,73 +164,73 @@ function Header() {
         </div>
       )}
 
-      {/* Mobile Side Menu */}
-      {isSideMenuOpen && (
-        <div className="fixed inset-0 z-[60] overflow-y-auto">
-          <div className="flex-1 bg-black bg-opacity-40" onClick={() => setMenu(false)}></div>
-          <div className="w-64 bg-white h-full p-6 shadow-lg absolute right-0 z-50" ref={sideMenuRef}>
-            <IoMdClose
-              className="text-3xl mb-6 cursor-pointer"
-              onClick={() => setMenu(false)}
-            />
-            <ul className="space-y-4 text-black font-medium">
-              <li><Link to="/" onClick={() => setMenu(false)}>Home</Link></li>
+     {/* Mobile Side Menu */}
+{/* Mobile Side Menu */}
+{isSideMenuOpen && (
+  <div className="fixed inset-0 z-[60] overflow-y-auto">
+    <div className="flex-1 bg-black bg-opacity-40" onClick={() => setMenu(false)}></div>
+    <div className="w-64 bg-white h-full p-6 shadow-lg absolute right-0 z-50" ref={sideMenuRef}>
+      <IoMdClose
+        className="text-3xl mb-6 cursor-pointer"
+        onClick={() => setMenu(false)}
+      />
+      <ul className="space-y-4 text-black font-medium">
+        <li><Link to="/" onClick={() => setMenu(false)}>Home</Link></li>
 
-              {/* About Us Dropdown for Mobile */}
-              <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setAboutDropdownOpen(true)}
-              onMouseLeave={() => setAboutDropdownOpen(false)}
-              ref={aboutRef}
-            >
-              <div className="flex items-center hover:text-green-600 select-none">
-                About Us <FaChevronDown className="ml-1 text-sm" />
-              </div>
-              {isAboutDropdownOpen && (
-                <div className="absolute top-full left-0 bg-slate-100 text-black border shadow-md z-50 w-64 mt-0 rounded-md p-3 space-y-2">
-                  <Link to="/vision" className="block border-b border-yellow-800 pb-1 hover:text-orange-600">Vision, Mission & Core Values</Link>
-                  <Link to="/approach" className="block border-b border-yellow-800 pb-1 hover:text-orange-600">Our Approach</Link>
-                  <Link to="/services" className="block hover:text-orange-600">Our Product & Services</Link>
-                </div>
-              )}
-            </li>
-
-              {/* Facilities Dropdown for Mobile */}
-              <li
-              ref={facilitiesRef}
-              className="relative cursor-pointer"
-              onMouseEnter={() => setFacilitiesDropdownOpen(true)}
-              onMouseLeave={() => setFacilitiesDropdownOpen(false)}
-            >
-              <div className="flex items-center hover:text-green-600 select-none">
-                Projects <FaChevronDown className="ml-1 text-sm" />
-              </div>
-              {isFacilitiesDropdownOpen && (
-                <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-0">
-                  {[{ name: "Residential Buildings", path: "/residential" }, { name: "Commercial Buildings", path: "/residential" }, { name: "Hospitals", path: "/residential" }, { name: "Learning Institutions", path: "/residential" }, { name: "Warehouses", path: "/residential" }, { name: "Factories", path: "/residential" }]
-                    .map((item, idx) => (
-                      <li key={idx}>
-                        <Link
-                          to={item.path}
-                          className="block px-4 py-2 hover:bg-orange-600 hover:text-white"
-                          onClick={() => setFacilitiesDropdownOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                </ul>
-              )}
-            </li>
-
-         
-              <li><Link to="/faqs" onClick={() => setMenu(false)}>FAQs</Link></li>
-             
-              <li><Link to="/contact" onClick={() => setMenu(false)}>Contact</Link></li>
-            </ul>
+        {/* About Us Dropdown for Mobile */}
+        <li
+          className="relative cursor-pointer"
+          onClick={() => setAboutDropdownOpen(!isAboutDropdownOpen)} // Toggle dropdown on click
+          ref={aboutRef}
+        >
+          <div className="flex items-center hover:text-green-600 select-none">
+            About Us <FaChevronDown className="ml-1 text-sm" />
           </div>
-        </div>
-      )}
+          {isAboutDropdownOpen && (
+            <div className="absolute top-full left-0 bg-slate-100 text-black border shadow-md z-50 w-64 mt-1 rounded-md p-3 space-y-2">
+              <Link to="/vision" className="block border-b border-yellow-800 pb-1 hover:text-orange-600 ml-2">Vision, Mission & Core Values</Link>
+              <Link to="/approach" className="block border-b border-yellow-800 pb-1 hover:text-orange-600 ml-2">Our Approach</Link>
+              <Link to="/services" className="block hover:text-orange-600 ml-2">Our Product & Services</Link>
+            </div>
+          )}
+        </li>
+
+        {/* Facilities Dropdown for Mobile */}
+        <li
+          ref={facilitiesRef}
+          className="relative cursor-pointer"
+          onMouseEnter={() => setFacilitiesDropdownOpen(true)}
+          onMouseLeave={() => setFacilitiesDropdownOpen(false)}
+        >
+          <div className="flex items-center hover:text-green-600 select-none">
+            Projects <FaChevronDown className="ml-1 text-sm" />
+          </div>
+          {isFacilitiesDropdownOpen && (
+            <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-1">
+              {[{ name: "Residential Buildings", path: "/residential" }, { name: "Commercial Buildings", path: "/residential" }, { name: "Hospitals", path: "/residential" }, { name: "Learning Institutions", path: "/residential" }, { name: "Warehouses", path: "/residential" }, { name: "Factories", path: "/residential" }]
+                .map((item, idx) => (
+                  <li key={idx}>
+                    <Link
+                      to={item.path}
+                      className="block px-4 py-2 hover:bg-orange-600 hover:text-white ml-2"
+                      onClick={() => setFacilitiesDropdownOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          )}
+        </li>
+
+        <li><Link to="/faqs" onClick={() => setMenu(false)}>FAQs</Link></li>
+        <li><Link to="/contact" onClick={() => setMenu(false)}>Contact</Link></li>
+      </ul>
+    </div>
+  </div>
+)}
+v
+
     </nav>
   );
 }
