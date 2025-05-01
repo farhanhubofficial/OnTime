@@ -96,7 +96,7 @@ function Header() {
               </div>
               {isFacilitiesDropdownOpen && (
                 <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-0">
-                  {[{ name: "Residential Buildings", path: "/residential" }, { name: "Commercial Buildings", path: "/residential" }, { name: "Hospitals", path: "/residential" }, { name: "Learning Institutions", path: "/residential" }, { name: "Warehouses", path: "/residential" }, { name: "Factories", path: "/residential" }]
+                  {[{ name: "Residential Buildings", path: "/residential-buildings" }, { name: "Commercial Buildings", path: "/commercial-buildings" }, { name: "Hospitals", path: "/hospitals" }, { name: "Learning Institutions", path: "/learning-institutions" }, { name: "Warehouses", path: "/warehouses" }]
                     .map((item, idx) => (
                       <li key={idx}>
                         <Link
@@ -204,7 +204,7 @@ function Header() {
                 </div>
                 {isFacilitiesDropdownOpen && (
                   <ul className="absolute bg-slate-100 text-black shadow-md rounded-md py-2 w-52 z-40 mt-1">
-                    {[{ name: "Residential Buildings", path: "/residential" }, { name: "Commercial Buildings", path: "/residential" }, { name: "Hospitals", path: "/residential" }, { name: "Learning Institutions", path: "/residential" }, { name: "Warehouses", path: "/residential" }, { name: "Factories", path: "/residential" }]
+                    {[{ name: "Residential Buildings", path: "/residential-buildings" }, { name: "Commercial Buildings", path: "/commercial-buildings" }, { name: "Hospitals", path: "/hospitals" }, { name: "Learning Institutions", path: "/learning-institutions" }, { name: "Warehouses", path: "/warehouses" }]
                       .map((item, idx) => (
                         <li key={idx}>
                           <Link

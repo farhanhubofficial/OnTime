@@ -2,28 +2,22 @@ import React, { useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
-// Images of residential buildings with electrical installations
-import h1 from "./images/tamam1.jpeg";
-import h2 from "./images/tamam3.jpeg";
-import h3 from "./images/sagal.jpeg";
-import h4 from "./images/sagal 2.jpeg";
-import h5 from "./images/ResBuilding.jpeg";
-import h6 from "./images/nomad1.jpeg";
-import h7 from "./images/nomad2.jpeg";
-import h8 from "./images/nomad3.jpeg";
-import h9 from "./images/muratina2.jpeg";
-import h10 from "./images/muratina1.jpeg";
-import h11 from "./images/muratina3.jpeg";
-import h12 from "./images/proj1.jpeg";
-import h13 from "./images/proj3.jpeg";
-import h14 from "./images/proj4.jpeg";
-import h15 from "./images/proj5.jpeg";
-import h16 from "./images/proj6.jpeg";
-import h17 from "./images/proj7.jpeg";
+// Images of hospital buildings with electrical installations
+import h1 from "./images/hospital1.jpeg";
+import h2 from "./images/hospital2.jpeg";
+import h3 from "./images/hospital3.jpeg";
+import h4 from "./images/hospital4.jpeg";
+import h5 from "./images/hospital5.jpeg";
+import h6 from "./images/hospital6.jpeg";
+import h7 from "./images/hospital7.jpeg";
+import h8 from "./images/hospital8.jpeg";
 
-const images = [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17];
 
-const Residential = () => {
+
+
+const images = [h1, h2, h3, h4, h5, h6, h7, h8, ];
+
+const Hospital = () => {
   const form = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -61,35 +55,35 @@ const Residential = () => {
       {/* Hero Image */}
       <img
         src={h1}
-        alt="Residential Building Electrical Installation"
+        alt="Hospital Building Electrical Installation"
         className="w-full h-96  p-4"
       />
 
       {/* Content */}
       <div className="px-6 py-10 text-gray-800 space-y-8 text-justify leading-relaxed tracking-normal">
         <h1 className="text-4xl md:text-5xl font-bold text-center">
-          Our Electrical Installation for <span className="text-orange-600">Residential</span> Buildings
+          Our Electrical Installation for <span className="text-orange-600">Hospital</span> Buildings
         </h1>
 
         <p>
-          At UrbanVolt Solutions, we specialize in providing high-quality electrical installations for residential buildings.
+          At UrbanVolt Solutions, we specialize in providing high-quality electrical installations for hospital buildings.
           Our services are designed to ensure safety, efficiency, and sustainability, meeting all the necessary requirements for modern homes.
         </p>
 
         <div>
-          <h2 className="text-2xl font-semibold mb-3">Why Choose Us for Residential Electrical Installations?</h2>
+          <h2 className="text-2xl font-semibold mb-3">Why Choose Us for hospital Electrical Installations?</h2>
           <ul className="space-y-4 list-disc pl-6">
             <li><strong>Safety First:</strong> We prioritize safety in all our electrical installations, ensuring compliance with local electrical codes and regulations.</li>
-            <li><strong>Expert Technicians:</strong> Our team consists of skilled electricians with years of experience in residential electrical systems.</li>
+            <li><strong>Expert Technicians:</strong> Our team consists of skilled electricians with years of experience in hospital electrical systems.</li>
             <li><strong>Efficient Solutions:</strong> We use the latest technology and efficient installation techniques to save time and energy.</li>
           </ul>
         </div>
   
         <div className="bg-gray-200 rounded-lg p-4"> 
           <div className="mx-8 mr-6">
-          <h2 className="text-2xl font-semibold  mb-3">Previous Residential Projects</h2>
+          <h2 className="text-2xl font-semibold  mb-3">Previous hospital Projects</h2>
           <p className="mb-6">
-            Take a look at some of the residential buildings we've worked on. Our expertise in electrical installations has helped many homeowners enjoy a safe and well-lit environment.
+            Take a look at some of the hospital buildings we've worked on. Our expertise in electrical installations has helped many homeowners enjoy a safe and well-lit environment.
           </p>
           </div>
         
@@ -105,7 +99,7 @@ const Residential = () => {
                   <div key={index} className="w-full h-full flex-shrink-0 flex items-center justify-center">
                     <img
                       src={img}
-                      alt={`Residential Project ${index + 1}`}
+                      alt={`hospital Project ${index + 1}`}
                       className="w-full h-full max-h-[450px] object-contain p-4"
                     />
                   </div>
@@ -201,4 +195,4 @@ const Residential = () => {
   );
 };
 
-export default Residential;
+export default Hospital;

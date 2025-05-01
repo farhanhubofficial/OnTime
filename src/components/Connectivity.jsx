@@ -8,6 +8,8 @@ import Vision from './Vision'
 import Approach from './Approach'
 import OntimeServices from "./OntimeServices"
 import Contact from "./Contact"
+import Commercial from "./Commercial"
+import Learning from "./Learning"
 
 import Coworkingspaces from './Coworkingspaces'
 import CreativeSpaces from "./CreativeSpaces";
@@ -17,14 +19,19 @@ import ConferenceRoom from "./ConferenceRoom";
 import OnTimeStudio from "./OnTimeStudio";
 import Faqs from "./Faqs"
 import Residential from "./Residential"
+import Hospital from "./Hospital"
+import Warehouse from './Warehouse'
 
 function Connectivity() {
   return (
     <div>
         <Header/>
         <Routes>
-        <Route path="/residential" element={<Residential />} />
+        <Route path="/learning-institutions" element={<Learning />} />
 
+        <Route path="/residential-buildings" element={<Residential />} />
+        <Route path="/hospitals" element={<Hospital />} />
+        <Route path="/warehouses" element={<Warehouse />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/vision" element={<Vision />} />
@@ -38,6 +45,7 @@ function Connectivity() {
         <Route path= "/studio" element = {<OnTimeStudio/>}></Route>
   <Route path="/faqs" element={<Faqs />} />
         <Route path= "/contact" element = {<Contact/>}></Route>
+        <Route path= "/commercial-buildings" element = {<Commercial/>}></Route>
 
 
 
