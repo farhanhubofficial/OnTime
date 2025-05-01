@@ -14,14 +14,9 @@ import h8 from "./images/nomad3.jpeg";
 import h9 from "./images/muratina2.jpeg";
 import h10 from "./images/muratina1.jpeg";
 import h11 from "./images/muratina3.jpeg";
-import h12 from "./images/proj1.jpeg";
-import h13 from "./images/proj3.jpeg";
-import h14 from "./images/proj4.jpeg";
-import h15 from "./images/proj5.jpeg";
-import h16 from "./images/proj6.jpeg";
-import h17 from "./images/proj7.jpeg";
 
-const images = [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17];
+
+const images = [h1, h2, h3, h4, h5, h6, h7, h8, h9];
 
 const Residential = () => {
   const form = useRef();
@@ -127,17 +122,18 @@ const Residential = () => {
               </button>
 
               {/* Dots */}
-              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-3">
-                {images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-4 h-4 rounded-full border-2 transition ${
-                      currentIndex === index ? "bg-white border-white" : "bg-gray-500 border-gray-500"
-                    }`}
-                  ></button>
-                ))}
-              </div>
+              <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-center gap-2 sm:gap-3 px-2 max-w-[90%]">
+  {images.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => setCurrentIndex(index)}
+      className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 transition ${
+        currentIndex === index ? "bg-white border-white" : "bg-gray-500 border-gray-500"
+      }`}
+    ></button>
+  ))}
+</div>
+
             </div>
           </div>
         </div>
