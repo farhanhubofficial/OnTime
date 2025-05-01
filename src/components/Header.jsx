@@ -14,7 +14,6 @@ function Header() {
   const aboutRefMobile = useRef(null);
   const projectsRefMobile = useRef(null);
 
-  // Close dropdowns when clicking outside the mobile menu
   useEffect(() => {
     function handleClickOutsideSideMenu(e) {
       if (sideMenuRef.current && !sideMenuRef.current.contains(e.target)) {
@@ -29,7 +28,6 @@ function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutsideSideMenu);
   }, [isSideMenuOpen]);
 
-  // Close the dropdowns when clicking outside of them
   useEffect(() => {
     function handleClickOutsideDropdowns(e) {
       if (
@@ -51,10 +49,7 @@ function Header() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-md font-[Poppins]">
       <div className="flex flex-wrap items-center justify-between px-4 py-3 md:px-6 lg:px-10 relative">
-
-        {/* Desktop Header Layout */}
         <div className="hidden md:flex w-full justify-between items-center">
-          {/* Logo */}
           <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
             <img src={Logo} alt="OnTime Logo" className="h-16 w-16 object-cover rounded-full flex-shrink-0" />
             <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold leading-tight whitespace-nowrap">
@@ -63,11 +58,8 @@ function Header() {
             </h1>
           </div>
 
-          {/* Desktop Nav */}
           <ul className="flex space-x-9 justify-between text-xl items-center text-black font-medium gap-6">
             <li><Link to="/" className="hover:text-green-600">Home</Link></li>
-
-            {/* About Us Dropdown */}
             <li
               className="relative cursor-pointer"
               onMouseEnter={() => setAboutDropdownOpen(true)}
@@ -84,8 +76,6 @@ function Header() {
                 </div>
               )}
             </li>
-
-            {/* Facilities Dropdown */}
             <li
               className="relative cursor-pointer"
               onMouseEnter={() => setFacilitiesDropdownOpen(true)}
@@ -111,12 +101,10 @@ function Header() {
                 </ul>
               )}
             </li>
-
             <li><Link to="/faqs" className="hover:text-green-600">FAQs</Link></li>
             <li><Link to="/contact" className="hover:text-green-600">Contact</Link></li>
           </ul>
 
-          {/* Desktop Search Icon */}
           <div className="hidden md:flex items-center ml-4">
             <CiSearch
               className="text-2xl cursor-pointer hover:text-green-600"
@@ -125,9 +113,7 @@ function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu + Search */}
         <div className="md:hidden flex items-center gap-3 w-full justify-between">
-          {/* Logo and Text for Mobile */}
           <div className="flex-shrink-0 flex items-center gap-2">
             <img src={Logo} alt="OnTime Logo" className="h-20 w-26 object-cover rounded-full" />
             <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold leading-tight whitespace-nowrap">
@@ -135,7 +121,6 @@ function Header() {
               <span className="text-blue-600 leading-none">Solutions</span>
             </h1>
           </div>
-
           <div className="flex items-center gap-3">
             <CiSearch
               className="text-2xl cursor-pointer text-black"
@@ -149,7 +134,6 @@ function Header() {
         </div>
       </div>
 
-      {/* Search Bar */}
       {showSearchBar && (
         <div className="w-full px-6 md:px-10 pb-4 flex items-center gap-2">
           <input
@@ -163,7 +147,6 @@ function Header() {
         </div>
       )}
 
-      {/* Mobile Side Menu */}
       {isSideMenuOpen && (
         <div className="fixed inset-0 z-[60] overflow-y-auto">
           <div className="flex-1 bg-black bg-opacity-40" onClick={() => setMenu(false)}></div>
@@ -174,11 +157,9 @@ function Header() {
             />
             <ul className="space-y-4 text-black font-medium">
               <li><Link to="/" onClick={() => setMenu(false)}>Home</Link></li>
-
-              {/* About Us Dropdown for Mobile */}
               <li
                 className="relative cursor-pointer"
-                onClick={() => setAboutDropdownOpen(!isAboutDropdownOpen)} // Toggle dropdown on click
+                onClick={() => setAboutDropdownOpen(!isAboutDropdownOpen)}
                 ref={aboutRefMobile}
               >
                 <div className="flex items-center hover:text-green-600 select-none">
@@ -186,18 +167,16 @@ function Header() {
                 </div>
                 {isAboutDropdownOpen && (
                   <div className="absolute top-full left-0 bg-slate-100 text-black border shadow-md z-50 w-64 mt-1 rounded-md p-3 space-y-2">
-                    <Link to="/vision" className="block border-b border-yellow-800 pb-1 hover:text-orange-600 ml-2">Vision, Mission & Core Values</Link>
-                    <Link to="/approach" className="block border-b border-yellow-800 pb-1 hover:text-orange-600 ml-2">Our Approach</Link>
-                    <Link to="/services" className="block hover:text-orange-600 ml-2">Our Product & Services</Link>
+                    <Link to="/vision" onClick={() => setMenu(false)} className="block border-b border-yellow-800 pb-1 hover:text-orange-600 ml-2">Vision, Mission & Core Values</Link>
+                    <Link to="/approach" onClick={() => setMenu(false)} className="block border-b border-yellow-800 pb-1 hover:text-orange-600 ml-2">Our Approach</Link>
+                    <Link to="/services" onClick={() => setMenu(false)} className="block hover:text-orange-600 ml-2">Our Product & Services</Link>
                   </div>
                 )}
               </li>
-
-              {/* Facilities Dropdown for Mobile */}
               <li
                 ref={projectsRefMobile}
                 className="relative cursor-pointer"
-                onClick={() => setFacilitiesDropdownOpen(!isFacilitiesDropdownOpen)} // Toggle dropdown on click
+                onClick={() => setFacilitiesDropdownOpen(!isFacilitiesDropdownOpen)}
               >
                 <div className="flex items-center hover:text-green-600 select-none">
                   Projects <FaChevronDown className="ml-1 text-sm" />
@@ -209,8 +188,11 @@ function Header() {
                         <li key={idx}>
                           <Link
                             to={item.path}
+                            onClick={() => {
+                              setFacilitiesDropdownOpen(false);
+                              setMenu(false);
+                            }}
                             className="block px-4 py-2 hover:bg-orange-600 hover:text-white ml-2"
-                            onClick={() => setFacilitiesDropdownOpen(false)}
                           >
                             {item.name}
                           </Link>
@@ -219,7 +201,6 @@ function Header() {
                   </ul>
                 )}
               </li>
-
               <li><Link to="/faqs" onClick={() => setMenu(false)}>FAQs</Link></li>
               <li><Link to="/contact" onClick={() => setMenu(false)}>Contact</Link></li>
             </ul>
